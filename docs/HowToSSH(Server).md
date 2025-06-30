@@ -107,6 +107,6 @@ Gib das gesetzte Passwort ein – und du bist verbunden ✅
 
 ---
 
-!!! tip "Zurück zur vorherigen Etappe"
+!!! tip "Zur nächsten Etappe"
 
-    👉 [SSH-Zugriff von Windows/Linux einrichten »](HowToSSH.md)
+    👉 [SSH-Zugriff zum Ununtu-Server »](HowToSSH.md)
