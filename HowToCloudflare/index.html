@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloudflare-tunnel-setup-ohne-account" class="md-skip">
+        <a href="#etappe-2-cloudflare-tunnel-setup-ohne-account" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -365,18 +365,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#voraussetzungen" class="md-nav__link">
+  <a href="#hintergrund" class="md-nav__link">
     <span class="md-ellipsis">
-      Voraussetzungen
+      🚧 Hintergrund
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-cloudflare-installieren" class="md-nav__link">
+  <a href="#voraussetzungen" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Cloudflare installieren
+      ✅ Voraussetzungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-cloudflare-tunnel-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 1. Cloudflare Tunnel installieren
     </span>
   </a>
   
@@ -385,25 +394,34 @@
         <li class="md-nav__item">
   <a href="#2-tunnel-im-hintergrund-starten" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Tunnel im Hintergrund starten
+      🚀 2. Tunnel im Hintergrund starten
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tunnel-url-auslesen" class="md-nav__link">
+  <a href="#3-https-tunnel-url-auslesen" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Tunnel-URL auslesen
+      🔎 3. HTTPS-Tunnel-URL auslesen
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hinweis" class="md-nav__link">
+  <a href="#hinweis-zur-etappe" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ Hinweis
+      ⚠️ Hinweis zur Etappe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-infos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Weitere Infos
     </span>
   </a>
   
@@ -452,18 +470,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#voraussetzungen" class="md-nav__link">
+  <a href="#hintergrund" class="md-nav__link">
     <span class="md-ellipsis">
-      Voraussetzungen
+      🚧 Hintergrund
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-cloudflare-installieren" class="md-nav__link">
+  <a href="#voraussetzungen" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Cloudflare installieren
+      ✅ Voraussetzungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-cloudflare-tunnel-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 1. Cloudflare Tunnel installieren
     </span>
   </a>
   
@@ -472,25 +499,34 @@
         <li class="md-nav__item">
   <a href="#2-tunnel-im-hintergrund-starten" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Tunnel im Hintergrund starten
+      🚀 2. Tunnel im Hintergrund starten
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tunnel-url-auslesen" class="md-nav__link">
+  <a href="#3-https-tunnel-url-auslesen" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Tunnel-URL auslesen
+      🔎 3. HTTPS-Tunnel-URL auslesen
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hinweis" class="md-nav__link">
+  <a href="#hinweis-zur-etappe" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ Hinweis
+      ⚠️ Hinweis zur Etappe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weitere-infos" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Weitere Infos
     </span>
   </a>
   
@@ -512,49 +548,63 @@
 
 
 
-<h1 id="cloudflare-tunnel-setup-ohne-account">🌐 Cloudflare Tunnel Setup (ohne Account)<a class="headerlink" href="#cloudflare-tunnel-setup-ohne-account" title="Permanent link">&para;</a></h1>
-<p>Auf dieser Etappe der <em>Route</em> geht es darum, deinen lokalen Dienst über das Internet sicher zugänglich zu machen – <strong>per HTTPS</strong>, ohne eigene Domain.</p>
-<p>Diese Anleitung zeigt dir, wie du mit <strong>Cloudflare Tunnel</strong> einen temporären, verschlüsselten Zugang zu deinem lokalen Backend einrichtest und den Dienst dabei im Hintergrund betreibst.</p>
-<p>In unserem Projekt wurde das Frontend separat auf <strong>Netlify</strong> deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert.<br />
-Hier biegt unsere Route Richtung <strong>Cloudflare</strong> ab.</p>
-<p>Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend spricht mit Cloudflare, und Cloudflare leitet die Anfragen sicher an unser Backend weiter – ganz ohne Domain und Zertifikatsaufwand.</p>
-<p>Da dieser Tunnel nur während der Laufzeit aktiv ist, starten wir ihn im Hintergrund. Die dabei generierte HTTPS-URL wird im Terminal ausgegeben.<br />
-Weil das Terminal beim Hintergrundstart nicht sichtbar ist, speichern wir die Ausgabe automatisch in eine Datei. So können wir die Tunnel-URL später gezielt auslesen und z. B. im Frontend verwenden.</p>
-<h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ein Linux-Server mit Internetzugang</li>
-<li>Lokaler Dienst läuft unter http://localhost:8080</li>
-<li>nohup ist installiert (Standard bei den meisten Linux-Systemen)</li>
-</ul>
+<h1 id="etappe-2-cloudflare-tunnel-setup-ohne-account">🌐 Etappe 2 – Cloudflare Tunnel Setup (ohne Account)<a class="headerlink" href="#etappe-2-cloudflare-tunnel-setup-ohne-account" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Etappenziel</p>
+<p>Auf dieser Etappe deiner <em>Route</em> lernst du, wie du deinen lokalen Dienst über das Internet sicher zugänglich machst – <strong>per HTTPS</strong>, ganz ohne eigene Domain oder Cloudflare-Account.</p>
+</div>
 <hr />
-<h2 id="1-cloudflare-installieren">1. Cloudflare installieren<a class="headerlink" href="#1-cloudflare-installieren" title="Permanent link">&para;</a></h2>
+<h2 id="hintergrund">🚧 Hintergrund<a class="headerlink" href="#hintergrund" title="Permanent link">&para;</a></h2>
+<p>In unserem Projekt wurde das Frontend separat auf <strong>Netlify</strong> deployed. Da Netlify standardmäßig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation funktioniert.<br />
+Hier biegt unsere Route Richtung <strong>Cloudflare Tunnel</strong> ab.</p>
+<p>Cloudflare stellt uns einen temporären HTTPS-Tunnel zur Verfügung:<br />
+Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen sicher an das lokale Backend weiter – ohne Zertifikate oder Domain.</p>
+<hr />
+<h2 id="voraussetzungen">✅ Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Was du brauchst</p>
+<ul>
+<li>🐧 Ein Linux-Server mit Internetzugang</li>
+<li>🔁 Ein lokal laufender Dienst auf <code>http://localhost:8080</code></li>
+<li>📦 <code>nohup</code> installiert (standardmäßig bei den meisten Linux-Systemen)</li>
+</ul>
+</div>
+<hr />
+<h2 id="1-cloudflare-tunnel-installieren">🛠️ 1. Cloudflare Tunnel installieren<a class="headerlink" href="#1-cloudflare-tunnel-installieren" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cloudflared-linux-amd64.deb
 </code></pre></div>
 <hr />
-<h2 id="2-tunnel-im-hintergrund-starten">2. Tunnel im Hintergrund starten<a class="headerlink" href="#2-tunnel-im-hintergrund-starten" title="Permanent link">&para;</a></h2>
-<p>Führe folgenden Befehl aus, um den Tunnel im Hintergrund zu starten:</p>
+<h2 id="2-tunnel-im-hintergrund-starten">🚀 2. Tunnel im Hintergrund starten<a class="headerlink" href="#2-tunnel-im-hintergrund-starten" title="Permanent link">&para;</a></h2>
+<p>Starte den Tunnel im Hintergrund, damit er auch nach SSH-Trennung weiterläuft:</p>
 <div class="highlight"><pre><span></span><code>nohup<span class="w"> </span>cloudflared<span class="w"> </span>tunnel<span class="w"> </span>--url<span class="w"> </span>http://localhost:8080<span class="w"> </span>&gt;<span class="w"> </span>tunnel.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-<p>Erklärung:</p>
+<div class="admonition info">
+<p class="admonition-title">Was passiert hier?</p>
+</div>
 <ul>
 <li>nohup sorgt dafür, dass der Tunnel im Hintergrund weiterläuft – auch nach einer SSH-Trennung.</li>
 <li>Die Ausgabe (inkl. HTTPS-URL) wird in die Datei tunnel.log geschrieben.</li>
 </ul>
 <hr />
-<h2 id="3-tunnel-url-auslesen">3. Tunnel-URL auslesen<a class="headerlink" href="#3-tunnel-url-auslesen" title="Permanent link">&para;</a></h2>
-<p>Um die erzeugte HTTPS-Adresse zu finden, verwende:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;grep -oP &#39;</span>https://.*<span class="se">\.</span>trycloudflare<span class="se">\.</span>com<span class="err">&#39;</span><span class="w"> </span>tunnel.log
+<h2 id="3-https-tunnel-url-auslesen">🔎 3. HTTPS-Tunnel-URL auslesen<a class="headerlink" href="#3-https-tunnel-url-auslesen" title="Permanent link">&para;</a></h2>
+<p>Verwende diesen Befehl, um die generierte URL herauszufiltern:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;https://.*\.trycloudflare\.com&#39;</span><span class="w"> </span>tunnel.log
 </code></pre></div>
 <p>Beispielausgabe:</p>
 <div class="highlight"><pre><span></span><code>https://raise-operational-will-gentle.trycloudflare.com
 </code></pre></div>
-<p>Diese URL kann z. B. im Frontend eingetragen werden, um das Backend erreichbar zu machen.</p>
+<p>👉 Diese URL kannst du z. B. im Frontend (Netlify) eintragen, um das Backend erreichbar zu machen.</p>
 <hr />
-<h2 id="hinweis">⚠️ Hinweis<a class="headerlink" href="#hinweis" title="Permanent link">&para;</a></h2>
-<p>Dieser „Account-less“-Tunnel ist nur temporär und hat keine Garantien bezüglich Verfügbarkeit oder Wiederverwendbarkeit. Für den produktiven Einsatz sollte ein benannter Tunnel mit Cloudflare-Account erstellt werden.</p>
-<p>Weitere Informationen:<br />
-👉 <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/">Cloudflare Tunnel Quickstart</a></p>
+<h2 id="hinweis-zur-etappe">⚠️ Hinweis zur Etappe<a class="headerlink" href="#hinweis-zur-etappe" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Nur temporär!</p>
+</div>
+<p>Der hier genutzte "Account-less"-Tunnel ist <strong>nur für temporäre Tests</strong> gedacht.<br />
+Er ist nicht garantiert verfügbar, nicht wiederverwendbar und nicht für Produktivsysteme geeignet.</p>
+<p>Für einen stabilen, benannten Tunnel solltest du ein Cloudflare-Konto nutzen.</p>
+<h2 id="weitere-infos">📚 Weitere Infos<a class="headerlink" href="#weitere-infos" title="Permanent link">&para;</a></h2>
+<p>👉 <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/">Cloudflare Tunnel Quickstart</a></p>
 
 
 
