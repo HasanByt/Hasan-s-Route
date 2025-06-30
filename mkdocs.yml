@@ -10,9 +10,9 @@ theme:
 nav:
   - Startseite: index.md
   - Anleitung:
-      - HowToCloudflare: HowToCloudfare.md
-      - HowToSSH(Server): HowToSSH(Server).md
-      - HowToSSH.md: HowToSSH.md
+      - How to Cloudflare: HowToCloudfare.md
+      - How to SSH(Server): HowToSSH(Server).md
+      - How to SSH.md: HowToSSH.md
 markdown_extensions:
   - admonition
   - codehilite

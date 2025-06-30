@@ -58,7 +58,7 @@ Diese URL kann z. B. im Frontend eingetragen werden, um das Backend erreichbar
 
 ---
 
-## Hinweis
+## ⚠️ Hinweis
 
 Dieser „Account-less“-Tunnel ist nur temporär und hat keine Garantien bezüglich Verfügbarkeit oder Wiederverwendbarkeit. Für den produktiven Einsatz sollte ein benannter Tunnel mit Cloudflare-Account erstellt werden.
 
