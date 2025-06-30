@@ -1,26 +1,32 @@
-# 🌐 Cloudflare Tunnel Setup (ohne Account)
+# 🌐 Etappe 2 – Cloudflare Tunnel Setup (ohne Account)
 
-Auf dieser Etappe der _Route_ geht es darum, deinen lokalen Dienst über das Internet sicher zugänglich zu machen – **per HTTPS**, ohne eigene Domain.
+!!! info "Etappenziel"
 
-Diese Anleitung zeigt dir, wie du mit **Cloudflare Tunnel** einen temporären, verschlüsselten Zugang zu deinem lokalen Backend einrichtest und den Dienst dabei im Hintergrund betreibst.
-
-In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert.  
-Hier biegt unsere Route Richtung **Cloudflare** ab.
-
-Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend spricht mit Cloudflare, und Cloudflare leitet die Anfragen sicher an unser Backend weiter – ganz ohne Domain und Zertifikatsaufwand.
-
-Da dieser Tunnel nur während der Laufzeit aktiv ist, starten wir ihn im Hintergrund. Die dabei generierte HTTPS-URL wird im Terminal ausgegeben.  
-Weil das Terminal beim Hintergrundstart nicht sichtbar ist, speichern wir die Ausgabe automatisch in eine Datei. So können wir die Tunnel-URL später gezielt auslesen und z. B. im Frontend verwenden.
-
-## Voraussetzungen
-
-- Ein Linux-Server mit Internetzugang
-- Lokaler Dienst läuft unter http://localhost:8080
-- nohup ist installiert (Standard bei den meisten Linux-Systemen)
+    Auf dieser Etappe deiner *Route* lernst du, wie du deinen lokalen Dienst über das Internet sicher zugänglich machst – **per HTTPS**, ganz ohne eigene Domain oder Cloudflare-Account.
 
 ---
 
-## 1. Cloudflare installieren
+## 🚧 Hintergrund
+
+In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmäßig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation funktioniert.  
+Hier biegt unsere Route Richtung **Cloudflare Tunnel** ab.
+
+Cloudflare stellt uns einen temporären HTTPS-Tunnel zur Verfügung:  
+Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen sicher an das lokale Backend weiter – ohne Zertifikate oder Domain.
+
+---
+
+## ✅ Voraussetzungen
+
+!!! tip "Was du brauchst"
+
+    - 🐧 Ein Linux-Server mit Internetzugang
+    - 🔁 Ein lokal laufender Dienst auf `http://localhost:8080`
+    - 📦 `nohup` installiert (standardmäßig bei den meisten Linux-Systemen)
+
+---
+
+## 🛠️ 1. Cloudflare Tunnel installieren
 
 ```bash
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
@@ -29,27 +35,26 @@ sudo dpkg -i cloudflared-linux-amd64.deb
 
 ---
 
-## 2. Tunnel im Hintergrund starten
+## 🚀 2. Tunnel im Hintergrund starten
 
-Führe folgenden Befehl aus, um den Tunnel im Hintergrund zu starten:
+Starte den Tunnel im Hintergrund, damit er auch nach SSH-Trennung weiterläuft:
 
 ```bash
 nohup cloudflared tunnel --url http://localhost:8080 > tunnel.log 2>&1 &
 ```
 
-Erklärung:
+!!! info "Was passiert hier?"
 
 - nohup sorgt dafür, dass der Tunnel im Hintergrund weiterläuft – auch nach einer SSH-Trennung.
 - Die Ausgabe (inkl. HTTPS-URL) wird in die Datei tunnel.log geschrieben.
-
 ---
 
-## 3. Tunnel-URL auslesen
+## 🔎 3. HTTPS-Tunnel-URL auslesen
 
-Um die erzeugte HTTPS-Adresse zu finden, verwende:
+Verwende diesen Befehl, um die generierte URL herauszufiltern:
 
 ```bash
-grep -oP 'grep -oP 'https://.*\.trycloudflare\.com' tunnel.log
+grep -oP 'https://.*\.trycloudflare\.com' tunnel.log
 ```
 
 Beispielausgabe:
@@ -58,13 +63,18 @@ Beispielausgabe:
 https://raise-operational-will-gentle.trycloudflare.com
 ```
 
-Diese URL kann z. B. im Frontend eingetragen werden, um das Backend erreichbar zu machen.
+👉 Diese URL kannst du z. B. im Frontend (Netlify) eintragen, um das Backend erreichbar zu machen.
 
 ---
 
-## ⚠️ Hinweis
+## ⚠️ Hinweis zur Etappe
 
-Dieser „Account-less“-Tunnel ist nur temporär und hat keine Garantien bezüglich Verfügbarkeit oder Wiederverwendbarkeit. Für den produktiven Einsatz sollte ein benannter Tunnel mit Cloudflare-Account erstellt werden.
+!!! warning "Nur temporär!"
 
-Weitere Informationen:  
+Der hier genutzte "Account-less"-Tunnel ist **nur für temporäre Tests** gedacht.  
+Er ist nicht garantiert verfügbar, nicht wiederverwendbar und nicht für Produktivsysteme geeignet.
+
+Für einen stabilen, benannten Tunnel solltest du ein Cloudflare-Konto nutzen.
+
+## 📚 Weitere Infos 
 👉 [Cloudflare Tunnel Quickstart](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)

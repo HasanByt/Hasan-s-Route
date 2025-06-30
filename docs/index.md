@@ -9,7 +9,7 @@
 !!! info "Was erwartet dich auf dieser Route?"
 
     Diese Dokumentation begleitet dich auf meinem Weg zu einer funktionierenden und sicheren Entwicklungsumgebung.  
-    Du lernst **Schritt für Schritt**, wie du deinen Ubuntu-Server vorbereitest, einen **Cloudflare-Tunnel** einrichtest und später auch eine CI/CD-Pipeline realisierst.
+    Du lernst **Schritt für Schritt**, wie du deinen Ubuntu-Server vorbereitest und einen **Cloudflare-Tunnel** einrichtest.
 
     Alle Stationen dieser Route sind **modular aufgebaut** – du kannst jederzeit einsteigen oder gezielt bestimmte Etappen ansteuern.
 
@@ -25,8 +25,9 @@
     - Aktivierung des **Passwort-Logins**
     - Verbindung über **Linux**, **Windows CMD**, **PowerShell** oder **PuTTY**
 
-    👉 [Zur SSH-Anleitung »](HowToSSH.md)  
     👉 [Zur Server-Konfiguration »](HowToSSH(Server).md)
+    👉 [Zur SSH-Anleitung »](HowToSSH.md)  
+    
 
 ---
 

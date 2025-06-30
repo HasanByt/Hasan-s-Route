@@ -1,77 +1,88 @@
-# 🔐 SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
+# 🔐 Etappe 1b – SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
 
-Bevor du dich auf deiner Route per SSH mit dem Server verbindest, lernst du hier, wie du unter **Linux** oder **Windows** OpenSSH installierst und dich **per Passwort** sicher anmeldest – ohne Public-Key-Konfiguration.
+!!! info "Etappenziel"
 
-## Für Linux
-
-### 1. OpenSSH Client installieren
-
-```bash
-sudo apt update
-sudo apt install openssh-client -y
-```
-
-Prüfen, ob SSH installiert ist:
-
-```bash
-ssh -V
-```
+    Bevor du dich auf deiner *Route* per SSH mit dem Server verbindest, lernst du hier, wie du unter **Linux** oder **Windows** OpenSSH installierst und dich **per Passwort** sicher anmeldest – ganz ohne Public-Key-Konfiguration.
 
 ---
 
-### 2. Verbindung mit dem Server herstellen
+## 🐧 Für Linux
 
-bsp.
+!!! tip "1. OpenSSH Client installieren"
 
-```bash
-ssh wiss@31.XXX.XXX.XXX
-```
+    Installiere den SSH-Client mit folgendem Befehl:
 
-## Für Windows
+    ```bash
+    sudo apt update
+    sudo apt install openssh-client -y
+    ```
 
-### 1. Windows
+    Prüfe danach, ob SSH korrekt installiert wurde:
 
-1. Öffne **PowerShell** oder **CMD**
+    ```bash
+    ssh -V
+    ```
+
+---
+
+!!! tip "2. Verbindung mit dem Server herstellen"
+
+    Beispiel:
+
+    ```bash
+    ssh wiss@31.XXX.XXX.XXX
+    ```
+
+---
+
+## 🪟 Für Windows
+
+### 🔹 Option 1: PowerShell / CMD (OpenSSH vorinstalliert)
+
+1. Öffne **PowerShell** oder **CMD**  
 2. Verbinde dich mit dem Server:
 
-bsp.
-
-```powershell
-ssh wiss@31.XXX.XXX.XXX
-```
+    ```powershell
+    ssh wiss@31.XXX.XXX.XXX
+    ```
 
 ---
 
-### 2. `ssh` nicht erkannt
+### 🔹 Option 2: `ssh` wird nicht erkannt
 
-1. Gehe zu **Einstellungen → Apps → Optionale Features**
-2. Installiere **OpenSSH Client**
-3. Danach:
+!!! note "OpenSSH Client aktivieren"
 
-bsp.
+1. Öffne: **Einstellungen → Apps → Optionale Features**  
+2. Suche nach **OpenSSH Client**  
+3. Installiere ihn, falls nicht vorhanden  
+4. Danach wie gewohnt verbinden:
 
-```powershell
-ssh wiss@31.XXX.XXX.XXX
-```
+    ```powershell
+    ssh wiss@31.XXX.XXX.XXX
+    ```
 
-### 3. Mit PuTTY
+---
 
-1. Lade PuTTY herunter: https://www.putty.org/
-2. Öffne PuTTY
-3. Gib ein:
+### 🔹 Option 3: Mit PuTTY (grafisch)
+
+1. Lade PuTTY herunter: [https://www.putty.org/](https://www.putty.org/)  
+2. Öffne PuTTY  
+3. Trage ein:
    - **Host Name**: `31.XXX.XXX.XXX`
    - **Port**: `22`
-   - **Connection type**: SSH
+   - **Connection type**: `SSH`
 4. Klicke auf **Open**
 5. Melde dich an:
-   - Benutzer: `wiss`
-   - Passwort: `XXXX`
+   - **Benutzername**: `wiss`
+   - **Passwort**: `XXXX`
 
-## Erfolgreiche Verbindung
+---
 
-Wenn alles geklappt hat, erscheint:
+## ✅ Erfolgreiche Verbindung
 
-```
+Wenn alles geklappt hat, siehst du etwas wie:
+
+```bash
 Welcome to Ubuntu ...
 ```
 
