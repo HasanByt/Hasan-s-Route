@@ -1,4 +1,4 @@
-# 🔐 Etappe 1b – SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
+# 🔐 Etappe 1b – SSH-Zugriff zum Ubuntu-Server
 
 !!! info "Etappenziel"
 
