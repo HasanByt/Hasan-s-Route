@@ -2,6 +2,12 @@
 
 Diese Anleitung beschreibt, wie ein Cloudflare-Tunnel eingerichtet und im Hintergrund betrieben wird, sodass man über eine öffentliche HTTPS-URL auf einen lokalen Dienst zugreifen kann.
 
+In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert. Hier kommt Cloudflare ins Spiel.
+
+Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen an unser Backend weiter.
+
+Da dieser Dienst und die zugehörige URL nur während der Laufzeit zur Verfügung stehen, betreiben wir den Tunnel im Hintergrund. Beim Start wird die HTTPS-URL im Terminal ausgegeben. Da wir den Dienst im Hintergrund starten und das Terminal nicht einsehen können, speichern wir die Ausgabe in eine Datei. So können wir die URL später aus der Datei auslesen.
+
 ## Voraussetzungen
 
 - Ein Linux-Server mit Internetzugang
@@ -28,6 +34,7 @@ nohup cloudflared tunnel --url http://localhost:8080 > tunnel.log 2>&1 &
 ```
 
 Erklärung:
+
 - nohup sorgt dafür, dass der Tunnel im Hintergrund weiterläuft – auch nach einer SSH-Trennung.
 - Die Ausgabe (inkl. HTTPS-URL) wird in die Datei tunnel.log geschrieben.
 
@@ -38,10 +45,11 @@ Erklärung:
 Um die erzeugte HTTPS-Adresse zu finden, verwende:
 
 ```bash
-grep -oP 'https://[a-zA-Z0-9-]+\.trycloudflare\.com' tunnel.log
+grep -oP 'grep -oP 'https://.*\.trycloudflare\.com' tunnel.log
 ```
 
 Beispielausgabe:
+
 ```bash
 https://raise-operational-will-gentle.trycloudflare.com
 ```

@@ -1,9 +1,7 @@
 
 # SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
 
-Diese Anleitung zeigt, wie man von **Linux** oder **Windows** per **SSH** auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwort.
-
-Im Projekt wurde anfangs Railway für das Hosting des Backends und der MySQL-Datenbank verwendet. Da das Test-Abo jedoch nach kurzer Zeit ablief, wurde stattdessen ein Ubuntu-Server zur Verfügung gestellt.
+Diese Anleitung zeigt, wie man von **Linux** oder **Windows** per **SSH** auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwor
 
 
 ## Für Linux
@@ -24,35 +22,37 @@ ssh -V
 ---
 
 ### 2. Verbindung mit dem Server herstellen
-
+bsp.
 ```bash
 ssh wiss@31.XXX.XXX.XXX
 ```
 
 ##  Für Windows
 
-### Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)
+### 1. Windows
 
 1. Öffne **PowerShell** oder **CMD**
 2. Verbinde dich mit dem Server:
 
+bsp.
 ```powershell
-ssh wiss@31.165.207.219
+ssh wiss@31.XXX.XXX.XXX
 ```
 
 ---
 
-### Option B: Wenn `ssh` nicht erkannt wird
+### 2. `ssh` nicht erkannt wird
 
 1. Gehe zu **Einstellungen → Apps → Optionale Features**
 2. Installiere **OpenSSH Client**
 3. Danach:
 
+bsp.
 ```powershell
 ssh wiss@31.XXX.XXX.XXX
 ```
 
-### Option C: Mit PuTTY (grafisches Tool)
+### 3. Mit PuTTY
 
 1. Lade PuTTY herunter: https://www.putty.org/
 2. Öffne PuTTY
