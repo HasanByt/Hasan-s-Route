@@ -1,0 +1,20 @@
+site_name: Hasan's Route
+site_url: https://HasanByt.github.io/HowToCloudflare
+theme:
+  name: material
+  language: de
+  palette:
+    scheme: default
+    primary: blue
+    accent: light blue
+nav:
+  - Startseite: index.md
+  - Anleitung:
+      - Cloudflare Tunnel: HowToCloudfare.md
+      - Server-Zugriff: ssh-zugriff.md
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
