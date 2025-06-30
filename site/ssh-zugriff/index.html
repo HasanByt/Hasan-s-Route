@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/HowToCloudfare/">
+        <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/ssh-zugriff/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../HowToCloudfare/">
       
-      
-        <link rel="next" href="../ssh-zugriff/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Cloudflare Tunnel - Hasan's Route</title>
+        <title>Server-Zugriff - Hasan's Route</title>
       
     
     
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloudflare-tunnel-setup-ohne-account" class="md-skip">
+        <a href="#ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloudflare Tunnel
+              Server-Zugriff
             
           </span>
         </div>
@@ -263,6 +261,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowToCloudfare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloudflare Tunnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -280,7 +301,7 @@
   
   
   <span class="md-ellipsis">
-    Cloudflare Tunnel
+    Server-Zugriff
     
   </span>
   
@@ -293,7 +314,7 @@
   
   
   <span class="md-ellipsis">
-    Cloudflare Tunnel
+    Server-Zugriff
     
   </span>
   
@@ -316,45 +337,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#voraussetzungen" class="md-nav__link">
+  <a href="#fur-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Voraussetzungen
+      Für Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Für Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-openssh-client-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. OpenSSH Client installieren
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#1-cloudflare-installieren" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-verbindung-mit-dem-server-herstellen" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Cloudflare installieren
+      2. Verbindung mit dem Server herstellen
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-tunnel-im-hintergrund-starten" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Tunnel im Hintergrund starten
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tunnel-url-auslesen" class="md-nav__link">
+  <a href="#fur-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Tunnel-URL auslesen
+      Für Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Für Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-windows-10-oder-11-mit-vorinstalliertem-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-wenn-ssh-nicht-erkannt-wird" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: Wenn ssh nicht erkannt wird
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-mit-putty-grafisches-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option C: Mit PuTTY (grafisches Tool)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#hinweis" class="md-nav__link">
+  <a href="#erfolgreiche-verbindung" class="md-nav__link">
     <span class="md-ellipsis">
-      Hinweis
+      Erfolgreiche Verbindung
     </span>
   </a>
   
@@ -364,29 +424,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ssh-zugriff/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Server-Zugriff
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -426,45 +463,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#voraussetzungen" class="md-nav__link">
+  <a href="#fur-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Voraussetzungen
+      Für Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Für Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-openssh-client-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. OpenSSH Client installieren
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#1-cloudflare-installieren" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-verbindung-mit-dem-server-herstellen" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Cloudflare installieren
+      2. Verbindung mit dem Server herstellen
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-tunnel-im-hintergrund-starten" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Tunnel im Hintergrund starten
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tunnel-url-auslesen" class="md-nav__link">
+  <a href="#fur-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Tunnel-URL auslesen
+      Für Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Für Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-windows-10-oder-11-mit-vorinstalliertem-openssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-wenn-ssh-nicht-erkannt-wird" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: Wenn ssh nicht erkannt wird
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-mit-putty-grafisches-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option C: Mit PuTTY (grafisches Tool)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#hinweis" class="md-nav__link">
+  <a href="#erfolgreiche-verbindung" class="md-nav__link">
     <span class="md-ellipsis">
-      Hinweis
+      Erfolgreiche Verbindung
     </span>
   </a>
   
@@ -486,45 +562,61 @@
 
 
 
-<h1 id="cloudflare-tunnel-setup-ohne-account">Cloudflare Tunnel Setup (ohne Account)<a class="headerlink" href="#cloudflare-tunnel-setup-ohne-account" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung beschreibt, wie ein Cloudflare-Tunnel eingerichtet und im Hintergrund betrieben wird, sodass man über eine öffentliche HTTPS-URL auf einen lokalen Dienst zugreifen kann.</p>
-<h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ein Linux-Server mit Internetzugang</li>
-<li>Lokaler Dienst läuft unter http://localhost:8080</li>
-<li>nohup ist installiert (Standard bei den meisten Linux-Systemen)</li>
-</ul>
-<hr />
-<h2 id="1-cloudflare-installieren">1. Cloudflare installieren<a class="headerlink" href="#1-cloudflare-installieren" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>wget<span class="w"> </span>https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
-sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cloudflared-linux-amd64.deb
+<h1 id="ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer">SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)<a class="headerlink" href="#ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer" title="Permanent link">&para;</a></h1>
+<p>Diese Anleitung zeigt, wie man von <strong>Linux</strong> oder <strong>Windows</strong> via <strong>SSH</strong> auf einen Server zugreift – inklusive OpenSSH-Installation und Zugang per Passwort.</p>
+<h2 id="fur-linux">Für Linux<a class="headerlink" href="#fur-linux" title="Permanent link">&para;</a></h2>
+<h3 id="1-openssh-client-installieren">1. OpenSSH Client installieren<a class="headerlink" href="#1-openssh-client-installieren" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-client<span class="w"> </span>-y
+</code></pre></div>
+
+<p>Prüfen, ob SSH installiert ist:</p>
+<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>-V
 </code></pre></div>
 
 <hr />
-<h2 id="2-tunnel-im-hintergrund-starten">2. Tunnel im Hintergrund starten<a class="headerlink" href="#2-tunnel-im-hintergrund-starten" title="Permanent link">&para;</a></h2>
-<p>Führe folgenden Befehl aus, um den Tunnel im Hintergrund zu starten:</p>
-<div class="codehilite"><pre><span></span><code>nohup<span class="w"> </span>cloudflared<span class="w"> </span>tunnel<span class="w"> </span>--url<span class="w"> </span>http://localhost:8080<span class="w"> </span>&gt;<span class="w"> </span>tunnel.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+<h3 id="2-verbindung-mit-dem-server-herstellen">2. Verbindung mit dem Server herstellen<a class="headerlink" href="#2-verbindung-mit-dem-server-herstellen" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>wiss@31.XXX.XXX.XXX
 </code></pre></div>
 
-<p>Erklärung:
-- nohup sorgt dafür, dass der Tunnel im Hintergrund weiterläuft – auch nach einer SSH-Trennung.
-- Die Ausgabe (inkl. HTTPS-URL) wird in die Datei tunnel.log geschrieben.</p>
+<h2 id="fur-windows">Für Windows<a class="headerlink" href="#fur-windows" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-windows-10-oder-11-mit-vorinstalliertem-openssh">Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)<a class="headerlink" href="#option-a-windows-10-oder-11-mit-vorinstalliertem-openssh" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Öffne <strong>PowerShell</strong> oder <strong>CMD</strong></li>
+<li>Verbinde dich mit dem Server:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">165</span><span class="p">.</span><span class="n">207</span><span class="p">.</span><span class="n">219</span>
+</code></pre></div>
+
 <hr />
-<h2 id="3-tunnel-url-auslesen">3. Tunnel-URL auslesen<a class="headerlink" href="#3-tunnel-url-auslesen" title="Permanent link">&para;</a></h2>
-<p>Um die erzeugte HTTPS-Adresse zu finden, verwende:</p>
-<div class="codehilite"><pre><span></span><code>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;https://[a-zA-Z0-9-]+\.trycloudflare\.com&#39;</span><span class="w"> </span>tunnel.log
+<h3 id="option-b-wenn-ssh-nicht-erkannt-wird">Option B: Wenn <code>ssh</code> nicht erkannt wird<a class="headerlink" href="#option-b-wenn-ssh-nicht-erkannt-wird" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Gehe zu <strong>Einstellungen → Apps → Optionale Features</strong></li>
+<li>Installiere <strong>OpenSSH Client</strong></li>
+<li>Danach:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
 </code></pre></div>
 
-<p>Beispielausgabe:</p>
-<div class="codehilite"><pre><span></span><code>https://raise-operational-will-gentle.trycloudflare.com
+<h3 id="option-c-mit-putty-grafisches-tool">Option C: Mit PuTTY (grafisches Tool)<a class="headerlink" href="#option-c-mit-putty-grafisches-tool" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Lade PuTTY herunter: https://www.putty.org/</li>
+<li>Öffne PuTTY</li>
+<li>Gib ein:</li>
+<li><strong>Host Name</strong>: <code>31.XXX.XXX.XXX</code></li>
+<li><strong>Port</strong>: <code>22</code></li>
+<li><strong>Connection type</strong>: SSH</li>
+<li>Klicke auf <strong>Open</strong></li>
+<li>Melde dich an:</li>
+<li>Benutzer: <code>wiss</code></li>
+<li>Passwort: <code>XXXX</code></li>
+</ol>
+<h2 id="erfolgreiche-verbindung">Erfolgreiche Verbindung<a class="headerlink" href="#erfolgreiche-verbindung" title="Permanent link">&para;</a></h2>
+<p>Wenn alles geklappt hat, erscheint:</p>
+<div class="codehilite"><pre><span></span><code>Welcome to Ubuntu ...
 </code></pre></div>
 
-<p>Diese URL kann z. B. im Frontend eingetragen werden, um das Backend erreichbar zu machen.</p>
-<hr />
-<h2 id="hinweis">Hinweis<a class="headerlink" href="#hinweis" title="Permanent link">&para;</a></h2>
-<p>Dieser „Account-less“-Tunnel ist nur temporär und hat keine Garantien bezüglich Verfügbarkeit oder Wiederverwendbarkeit. Für den produktiven Einsatz sollte ein benannter Tunnel mit Cloudflare-Account erstellt werden.</p>
-<p>Weitere Informationen:<br />
-👉 <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/">Cloudflare Tunnel Quickstart</a></p>
+<p>Du bist nun per SSH mit dem Server verbunden.</p>
 
 
 
