@@ -8,7 +8,7 @@
 
 ## 🚧 Hintergrund
 
-In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmäßig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation funktioniert.  
+In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation funktioniert.  
 Hier biegt unsere Route Richtung **Cloudflare Tunnel** ab.
 
 Cloudflare stellt uns einen temporären HTTPS-Tunnel zur Verfügung:  
@@ -22,7 +22,7 @@ Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen sic
 
     - 🐧 Ein Linux-Server mit Internetzugang
     - 🔁 Ein lokal laufender Dienst auf `http://localhost:8080`
-    - 📦 `nohup` installiert (standardmäßig bei den meisten Linux-Systemen)
+    - 📦 `nohup` installiert (standardmässig bei den meisten Linux-Systemen)
 
 ---
 

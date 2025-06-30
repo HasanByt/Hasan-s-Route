@@ -25,7 +25,7 @@ sudo apt update
 sudo apt install openssh-server -y
 ```
 
-Prüfe anschließend, ob der Dienst läuft:
+Prüfe anschliessend, ob der Dienst läuft:
 
 ```bash
 sudo systemctl status ssh
@@ -58,7 +58,7 @@ PermitRootLogin no
 
     `PermitRootLogin no` verhindert direkte Root-Logins – das erhöht die Sicherheit.
 
-Speichere und schließe die Datei (`CTRL + O`, `Enter`, dann `CTRL + X`).
+Speichere und schliesse die Datei (`CTRL + O`, `Enter`, dann `CTRL + X`).
 
 ---
 
