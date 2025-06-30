@@ -1,7 +1,10 @@
 
 # SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
 
-Diese Anleitung zeigt, wie man von **Linux** oder **Windows** via **SSH** auf einen Server zugreift – inklusive OpenSSH-Installation und Zugang per Passwort.
+Diese Anleitung zeigt, wie man von **Linux** oder **Windows** per **SSH** auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwort.
+
+Im Projekt wurde anfangs Railway für das Hosting des Backends und der MySQL-Datenbank verwendet. Da das Test-Abo jedoch nach kurzer Zeit ablief, wurde stattdessen ein Ubuntu-Server zur Verfügung gestellt.
+
 
 ## Für Linux
 

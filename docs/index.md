@@ -9,5 +9,3 @@ Erfahre, wie du OpenSSH installierst und entfernten Zugriff auf deinen Server ko
 Nutze Cloudflare, um deinen lokalen Server über HTTPS sicher erreichbar zu machen – **auch ohne eigene Domain**.
 
 ---
-
-📚 **Navigiere im Menü** links, um mit einer Anleitung zu starten.
