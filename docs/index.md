@@ -56,7 +56,7 @@
 ## 🚀 Dein erster Schritt
 
 Bereit? Starte mit der ersten Etappe:  
-👉 [SSH-Zugriff einrichten »](HowToSSH.md)
+👉 [SSH auf dem Server einrichten »](HowToSSH(Server).md)
 
 ---
 
