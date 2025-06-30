@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/ssh-zugriff/">
+        <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/HowToSSH/">
       
       
-        <link rel="prev" href="../HowToCloudfare/">
+        <link rel="prev" href="../HowToSSH%28Server%29/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Server-Zugriff - Hasan's Route</title>
+        <title>HowToSSH.md - Hasan's Route</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Server-Zugriff
+              HowToSSH.md
             
           </span>
         </div>
@@ -269,7 +269,30 @@
   
   
   <span class="md-ellipsis">
-    Cloudflare Tunnel
+    HowToCloudflare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowToSSH%28Server%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HowToSSH(Server)
     
   </span>
   
@@ -301,7 +324,7 @@
   
   
   <span class="md-ellipsis">
-    Server-Zugriff
+    HowToSSH.md
     
   </span>
   
@@ -314,7 +337,7 @@
   
   
   <span class="md-ellipsis">
-    Server-Zugriff
+    HowToSSH.md
     
   </span>
   
@@ -380,27 +403,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-a-windows-10-oder-11-mit-vorinstalliertem-openssh" class="md-nav__link">
+  <a href="#1-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)
+      1. Windows
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-wenn-ssh-nicht-erkannt-wird" class="md-nav__link">
+  <a href="#2-ssh-nicht-erkannt-wird" class="md-nav__link">
     <span class="md-ellipsis">
-      Option B: Wenn ssh nicht erkannt wird
+      2. ssh nicht erkannt wird
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-c-mit-putty-grafisches-tool" class="md-nav__link">
+  <a href="#3-mit-putty" class="md-nav__link">
     <span class="md-ellipsis">
-      Option C: Mit PuTTY (grafisches Tool)
+      3. Mit PuTTY
     </span>
   </a>
   
@@ -506,27 +529,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-a-windows-10-oder-11-mit-vorinstalliertem-openssh" class="md-nav__link">
+  <a href="#1-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)
+      1. Windows
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-wenn-ssh-nicht-erkannt-wird" class="md-nav__link">
+  <a href="#2-ssh-nicht-erkannt-wird" class="md-nav__link">
     <span class="md-ellipsis">
-      Option B: Wenn ssh nicht erkannt wird
+      2. ssh nicht erkannt wird
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-c-mit-putty-grafisches-tool" class="md-nav__link">
+  <a href="#3-mit-putty" class="md-nav__link">
     <span class="md-ellipsis">
-      Option C: Mit PuTTY (grafisches Tool)
+      3. Mit PuTTY
     </span>
   </a>
   
@@ -563,8 +586,7 @@
 
 
 <h1 id="ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer">SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)<a class="headerlink" href="#ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung zeigt, wie man von <strong>Linux</strong> oder <strong>Windows</strong> per <strong>SSH</strong> auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwort.</p>
-<p>Im Projekt wurde anfangs Railway für das Hosting des Backends und der MySQL-Datenbank verwendet. Da das Test-Abo jedoch nach kurzer Zeit ablief, wurde stattdessen ein Ubuntu-Server zur Verfügung gestellt.</p>
+<p>Diese Anleitung zeigt, wie man von <strong>Linux</strong> oder <strong>Windows</strong> per <strong>SSH</strong> auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwor</p>
 <h2 id="fur-linux">Für Linux<a class="headerlink" href="#fur-linux" title="Permanent link">&para;</a></h2>
 <h3 id="1-openssh-client-installieren">1. OpenSSH Client installieren<a class="headerlink" href="#1-openssh-client-installieren" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
@@ -577,29 +599,32 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 
 <hr />
 <h3 id="2-verbindung-mit-dem-server-herstellen">2. Verbindung mit dem Server herstellen<a class="headerlink" href="#2-verbindung-mit-dem-server-herstellen" title="Permanent link">&para;</a></h3>
+<p>bsp.</p>
 <div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>wiss@31.XXX.XXX.XXX
 </code></pre></div>
 
 <h2 id="fur-windows">Für Windows<a class="headerlink" href="#fur-windows" title="Permanent link">&para;</a></h2>
-<h3 id="option-a-windows-10-oder-11-mit-vorinstalliertem-openssh">Option A: Windows 10 oder 11 (mit vorinstalliertem OpenSSH)<a class="headerlink" href="#option-a-windows-10-oder-11-mit-vorinstalliertem-openssh" title="Permanent link">&para;</a></h3>
+<h3 id="1-windows">1. Windows<a class="headerlink" href="#1-windows" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Öffne <strong>PowerShell</strong> oder <strong>CMD</strong></li>
 <li>Verbinde dich mit dem Server:</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">165</span><span class="p">.</span><span class="n">207</span><span class="p">.</span><span class="n">219</span>
+<p>bsp.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
 </code></pre></div>
 
 <hr />
-<h3 id="option-b-wenn-ssh-nicht-erkannt-wird">Option B: Wenn <code>ssh</code> nicht erkannt wird<a class="headerlink" href="#option-b-wenn-ssh-nicht-erkannt-wird" title="Permanent link">&para;</a></h3>
+<h3 id="2-ssh-nicht-erkannt-wird">2. <code>ssh</code> nicht erkannt wird<a class="headerlink" href="#2-ssh-nicht-erkannt-wird" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Gehe zu <strong>Einstellungen → Apps → Optionale Features</strong></li>
 <li>Installiere <strong>OpenSSH Client</strong></li>
 <li>Danach:</li>
 </ol>
+<p>bsp.</p>
 <div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
 </code></pre></div>
 
-<h3 id="option-c-mit-putty-grafisches-tool">Option C: Mit PuTTY (grafisches Tool)<a class="headerlink" href="#option-c-mit-putty-grafisches-tool" title="Permanent link">&para;</a></h3>
+<h3 id="3-mit-putty">3. Mit PuTTY<a class="headerlink" href="#3-mit-putty" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Lade PuTTY herunter: https://www.putty.org/</li>
 <li>Öffne PuTTY</li>
