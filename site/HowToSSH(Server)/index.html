@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ssh-zugriff-per-passwort-ohne-public-key" class="md-skip">
+        <a href="#etappe-1a-ssh-zugriff-per-passwort-ohne-public-key" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -321,18 +321,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-openssh-server-installieren" class="md-nav__link">
+  <a href="#hintergrund" class="md-nav__link">
     <span class="md-ellipsis">
-      1. OpenSSH-Server installieren
+      🚧 Hintergrund
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ssh-fur-passwort-login-konfigurieren" class="md-nav__link">
+  <a href="#1-openssh-server-installieren" class="md-nav__link">
     <span class="md-ellipsis">
-      2. SSH für Passwort-Login konfigurieren
+      🛠️ 1. OpenSSH-Server installieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-passwort-login-aktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 2. Passwort-Login aktivieren
     </span>
   </a>
   
@@ -341,7 +350,7 @@
         <li class="md-nav__item">
   <a href="#3-ssh-dienst-neu-starten" class="md-nav__link">
     <span class="md-ellipsis">
-      3. SSH-Dienst neu starten
+      🔄 3. SSH-Dienst neu starten
     </span>
   </a>
   
@@ -350,33 +359,27 @@
         <li class="md-nav__item">
   <a href="#4-passwort-fur-benutzer-setzen" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Passwort für Benutzer setzen
+      🔑 4. Passwort für Benutzer setzen
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-verbindung-herstellen" class="md-nav__link">
+  <a href="#5-verbindung-testen" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Verbindung herstellen
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Verbindung herstellen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hinweis" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Hinweis
+      🧪 5. Verbindung testen
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#hinweis-zur-sicherheit" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Hinweis zur Sicherheit
+    </span>
+  </a>
   
 </li>
       
@@ -469,18 +472,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-openssh-server-installieren" class="md-nav__link">
+  <a href="#hintergrund" class="md-nav__link">
     <span class="md-ellipsis">
-      1. OpenSSH-Server installieren
+      🚧 Hintergrund
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-ssh-fur-passwort-login-konfigurieren" class="md-nav__link">
+  <a href="#1-openssh-server-installieren" class="md-nav__link">
     <span class="md-ellipsis">
-      2. SSH für Passwort-Login konfigurieren
+      🛠️ 1. OpenSSH-Server installieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-passwort-login-aktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 2. Passwort-Login aktivieren
     </span>
   </a>
   
@@ -489,7 +501,7 @@
         <li class="md-nav__item">
   <a href="#3-ssh-dienst-neu-starten" class="md-nav__link">
     <span class="md-ellipsis">
-      3. SSH-Dienst neu starten
+      🔄 3. SSH-Dienst neu starten
     </span>
   </a>
   
@@ -498,33 +510,27 @@
         <li class="md-nav__item">
   <a href="#4-passwort-fur-benutzer-setzen" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Passwort für Benutzer setzen
+      🔑 4. Passwort für Benutzer setzen
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-verbindung-herstellen" class="md-nav__link">
+  <a href="#5-verbindung-testen" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Verbindung herstellen
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Verbindung herstellen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hinweis" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Hinweis
+      🧪 5. Verbindung testen
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#hinweis-zur-sicherheit" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Hinweis zur Sicherheit
+    </span>
+  </a>
   
 </li>
       
@@ -544,48 +550,72 @@
 
 
 
-<h1 id="ssh-zugriff-per-passwort-ohne-public-key">🔐 SSH-Zugriff per Passwort (ohne Public Key)<a class="headerlink" href="#ssh-zugriff-per-passwort-ohne-public-key" title="Permanent link">&para;</a></h1>
+<h1 id="etappe-1a-ssh-zugriff-per-passwort-ohne-public-key">🔐 Etappe 1a – SSH-Zugriff per Passwort (ohne Public Key)<a class="headerlink" href="#etappe-1a-ssh-zugriff-per-passwort-ohne-public-key" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Etappenziel</p>
 <p>Diese Etappe auf <em>Hasan’s Route</em> führt dich zur Vorbereitung deines Ubuntu-Servers für den SSH-Zugriff – <strong>per Passwort</strong>, ganz ohne Public-Key-Konfiguration.</p>
-<p>Unsere Route startete ursprünglich mit <strong>Railway</strong>, wo Backend und Datenbank gehostet wurden. Als das Test-Abo endete, bogen wir auf einen neuen Pfad ab: ein eigener Ubuntu-Server.<br />
-In diesem Abschnitt erfährst du, wie du ihn für den sicheren Fernzugriff vorbereitest.</p>
-<p>Da unsere <strong>CI/CD-Pipeline</strong> direkten Zugriff auf den Server benötigt, ist dieser SSH-Zugriff ein zentraler Wegpunkt auf dem Deployment-Weg.</p>
+</div>
 <hr />
-<h2 id="1-openssh-server-installieren">1. OpenSSH-Server installieren<a class="headerlink" href="#1-openssh-server-installieren" title="Permanent link">&para;</a></h2>
-<p>Führe auf dem <strong>Ubuntu-Server</strong> folgende Befehle aus:</p>
+<h2 id="hintergrund">🚧 Hintergrund<a class="headerlink" href="#hintergrund" title="Permanent link">&para;</a></h2>
+<p>Unsere Route startete ursprünglich mit <strong>Railway</strong>, wo Backend und Datenbank gehostet wurden.<br />
+Als das Test-Abo endete, bogen wir auf einen neuen Pfad ab: ein eigener Ubuntu-Server.  </p>
+<p>Da unsere <strong>CI/CD-Pipeline</strong> direkten Zugriff auf den Server benötigt, ist der SSH-Zugriff ein zentraler Wegpunkt auf dem Deployment-Weg.</p>
+<hr />
+<h2 id="1-openssh-server-installieren">🛠️ 1. OpenSSH-Server installieren<a class="headerlink" href="#1-openssh-server-installieren" title="Permanent link">&para;</a></h2>
+<p>Führe auf dem Ubuntu-Server folgende Befehle aus:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
 </code></pre></div>
-<p>Anschliessend prüfen, ob der Dienst läuft:</p>
+<p>Prüfe anschließend, ob der Dienst läuft:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
 </code></pre></div>
-<p>Wenn nicht aktiv: Dienst starten und beim Boot aktivieren:</p>
+<p>Falls nicht aktiv, starte den Dienst und aktiviere den Autostart:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>ssh
 </code></pre></div>
-<h2 id="2-ssh-fur-passwort-login-konfigurieren">2. SSH für Passwort-Login konfigurieren<a class="headerlink" href="#2-ssh-fur-passwort-login-konfigurieren" title="Permanent link">&para;</a></h2>
-<p>Öffne die SSH-Konfigurationsdatei:</p>
+<hr />
+<h2 id="2-passwort-login-aktivieren">⚙️ 2. Passwort-Login aktivieren<a class="headerlink" href="#2-passwort-login-aktivieren" title="Permanent link">&para;</a></h2>
+<p>Bearbeite die Konfigurationsdatei:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/ssh/sshd_config
 </code></pre></div>
-<p>Suche und ändere (bzw. ergänze) folgende Zeilen:</p>
-<div class="highlight"><pre><span></span><code>PasswordAuthentication<span class="w"> </span>yes
-PermitRootLogin<span class="w"> </span>no
+<p>Suche und ändere (oder ergänze) folgende Zeilen:</p>
+<div class="highlight"><pre><span></span><code>PasswordAuthentication yes
+PermitRootLogin no
 </code></pre></div>
-<p>💡 <code>PermitRootLogin</code> sollte auf <code>no</code> gesetzt sein, um direkte Root-Logins zu verhindern.
-Datei speichern und schliessen.</p>
-<h2 id="3-ssh-dienst-neu-starten">3. SSH-Dienst neu starten<a class="headerlink" href="#3-ssh-dienst-neu-starten" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Sicherheit</p>
+<p><code>PermitRootLogin no</code> verhindert direkte Root-Logins – das erhöht die Sicherheit.</p>
+</div>
+<p>Speichere und schließe die Datei (<code>CTRL + O</code>, <code>Enter</code>, dann <code>CTRL + X</code>).</p>
+<hr />
+<h2 id="3-ssh-dienst-neu-starten">🔄 3. SSH-Dienst neu starten<a class="headerlink" href="#3-ssh-dienst-neu-starten" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
 </code></pre></div>
-<h2 id="4-passwort-fur-benutzer-setzen">4. Passwort für Benutzer setzen<a class="headerlink" href="#4-passwort-fur-benutzer-setzen" title="Permanent link">&para;</a></h2>
-<p>Falls der Benutzer noch kein Passwort hat, kannst du eins vergeben:</p>
+<hr />
+<h2 id="4-passwort-fur-benutzer-setzen">🔑 4. Passwort für Benutzer setzen<a class="headerlink" href="#4-passwort-fur-benutzer-setzen" title="Permanent link">&para;</a></h2>
+<p>Falls der Benutzer noch kein Passwort hat:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>dein-benutzername
 </code></pre></div>
-<h2 id="5-verbindung-herstellen">5. Verbindung herstellen<a class="headerlink" href="#5-verbindung-herstellen" title="Permanent link">&para;</a></h2>
-<p>Von einem Client aus (Linux, macOS, Windows PowerShell/CMD):</p>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>wiss
+</code></pre></div>
+<hr />
+<h2 id="5-verbindung-testen">🧪 5. Verbindung testen<a class="headerlink" href="#5-verbindung-testen" title="Permanent link">&para;</a></h2>
+<p>Von einem Client aus (Linux, macOS oder Windows PowerShell/CMD):</p>
 <div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>wiss@&lt;server-ip&gt;
 </code></pre></div>
-<p>Gib das gesetzte Passwort ein und du bist verbunden.</p>
-<h3 id="hinweis">⚠️ Hinweis<a class="headerlink" href="#hinweis" title="Permanent link">&para;</a></h3>
-<p>Die Anmeldung per Passwort ist einfach, aber weniger sicher als Public-Key-Authentifizierung.
-Für produktive Systeme wird dringend empfohlen, stattdessen auf Public-Key-Login umzustellen.</p>
+<p>Gib das gesetzte Passwort ein – und du bist verbunden ✅</p>
+<hr />
+<h2 id="hinweis-zur-sicherheit">⚠️ Hinweis zur Sicherheit<a class="headerlink" href="#hinweis-zur-sicherheit" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Nicht für produktive Systeme empfohlen</p>
+<p>Die Anmeldung per Passwort ist einfach, aber deutlich unsicherer als die Public-Key-Authentifizierung.<br />
+Für produktive Server wird dringend empfohlen, auf <strong>Public-Key-Login</strong> umzustellen.</p>
+</div>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Zurück zur vorherigen Etappe</p>
+<p>👉 <a href="../HowToSSH/">SSH-Zugriff von Windows/Linux einrichten »</a></p>
+</div>
 
 
 
