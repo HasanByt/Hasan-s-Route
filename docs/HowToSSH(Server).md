@@ -1,9 +1,11 @@
 # 🔐 SSH-Zugriff per Passwort (ohne Public Key)
 
-In diesem Abschnitt lernst du, wie du deinen Ubuntu-Server für den SSH-Zugriff vorbereitest – **mit Passwort-Anmeldung**, ganz ohne Public-Key-Konfiguration.
+Diese Etappe auf _Hasan’s Route_ führt dich zur Vorbereitung deines Ubuntu-Servers für den SSH-Zugriff – **per Passwort**, ganz ohne Public-Key-Konfiguration.
 
-Im Projekt wurde anfangs **Railway** für das Hosting des Backends und der MySQL-Datenbank verwendet. Da das Test-Abo jedoch nach kurzer Zeit ablief, wurde stattdessen ein Ubuntu-Server zur Verfügung gestellt.  
-Mit dieser Anleitung erfährst du, wie du den Server für den Fernzugriff per SSH vorbereitest.
+Unsere Route startete ursprünglich mit **Railway**, wo Backend und Datenbank gehostet wurden. Als das Test-Abo endete, bogen wir auf einen neuen Pfad ab: ein eigener Ubuntu-Server.  
+In diesem Abschnitt erfährst du, wie du ihn für den sicheren Fernzugriff vorbereitest.
+
+Da unsere **CI/CD-Pipeline** direkten Zugriff auf den Server benötigt, ist dieser SSH-Zugriff ein zentraler Wegpunkt auf dem Deployment-Weg.
 
 ---
 

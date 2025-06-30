@@ -1,12 +1,16 @@
-# Cloudflare Tunnel Setup (ohne Account)
+# 🌐 Cloudflare Tunnel Setup (ohne Account)
 
-Diese Anleitung beschreibt, wie ein Cloudflare-Tunnel eingerichtet und im Hintergrund betrieben wird, sodass man über eine öffentliche HTTPS-URL auf einen lokalen Dienst zugreifen kann.
+Auf dieser Etappe der _Route_ geht es darum, deinen lokalen Dienst über das Internet sicher zugänglich zu machen – **per HTTPS**, ohne eigene Domain.
 
-In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert. Hier kommt Cloudflare ins Spiel.
+Diese Anleitung zeigt dir, wie du mit **Cloudflare Tunnel** einen temporären, verschlüsselten Zugang zu deinem lokalen Backend einrichtest und den Dienst dabei im Hintergrund betreibst.
 
-Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen an unser Backend weiter.
+In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert.  
+Hier biegt unsere Route Richtung **Cloudflare** ab.
 
-Da dieser Dienst und die zugehörige URL nur während der Laufzeit zur Verfügung stehen, betreiben wir den Tunnel im Hintergrund. Beim Start wird die HTTPS-URL im Terminal ausgegeben. Da wir den Dienst im Hintergrund starten und das Terminal nicht einsehen können, speichern wir die Ausgabe in eine Datei. So können wir die URL später aus der Datei auslesen.
+Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend spricht mit Cloudflare, und Cloudflare leitet die Anfragen sicher an unser Backend weiter – ganz ohne Domain und Zertifikatsaufwand.
+
+Da dieser Tunnel nur während der Laufzeit aktiv ist, starten wir ihn im Hintergrund. Die dabei generierte HTTPS-URL wird im Terminal ausgegeben.  
+Weil das Terminal beim Hintergrundstart nicht sichtbar ist, speichern wir die Ausgabe automatisch in eine Datei. So können wir die Tunnel-URL später gezielt auslesen und z. B. im Frontend verwenden.
 
 ## Voraussetzungen
 

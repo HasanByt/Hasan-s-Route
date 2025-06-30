@@ -1,5 +1,6 @@
 site_name: Hasan's Route
 site_url: https://HasanByt.github.io/HowToCloudflare
+
 theme:
   name: material
   language: de
@@ -7,15 +8,25 @@ theme:
     scheme: default
     primary: blue
     accent: light blue
+  features:
+    - navigation.sections
+    - navigation.expand
+    - header.autohide
+    - content.action.edit
+    - content.code.copy
+
 nav:
   - Startseite: index.md
   - Anleitung:
-      - How to Cloudflare: HowToCloudfare.md
-      - How to SSH(Server): HowToSSH(Server).md
-      - How to SSH.md: HowToSSH.md
+      - How to SSH(Sever): HowToSSH(Server).md
+      - How to SSH: HowToSSH.md
+      - How to Cloudflare: HowToCloudflare.md
+
 markdown_extensions:
   - admonition
-  - codehilite
-  - footnotes
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji
   - toc:
       permalink: true

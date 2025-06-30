@@ -1,30 +1,64 @@
-# Willkommen zu *Hasan's Route* 👋
+# 🧭 Willkommen auf *Hasan's Route*
 
-Diese Dokumentation zeigt dir, wie ich die folgenden Themen umgesetzt habe - kompakt, verständlich und direkt anwendbar.
-
----
-
-## 🔐 Server-Zugriff mit SSH
-
-Erfahre Schritt für Schritt, wie du deinen Ubuntu-Server für den entfernten Zugriff vorbereitest, inklusive:
-
-- Installation des **OpenSSH-Servers**
-- Aktivierung des **Passwort-Logins**
-- Verbindung über **Linux**, **Windows CMD**, **PowerShell** oder **PuTTY**
-
-Diese Methode kommt zum Einsatz, weil unser ursprünglicher Hosting-Service (Railway) nur begrenzt verfügbar war. Nach Ablauf des Testzeitraums haben wir einen eigenen Ubuntu-Server verwendet. Mit dieser Anleitung kannst du dich per SSH verbinden – auch **ohne SSH-Key**.
-
-👉 [Zur Anleitung »](HowToSSH.md) </br>
-👉 [Zur Server Anleitung »](HowToSSH(Server).md) </br>
+> _„Jede Route beginnt mit einem ersten Schritt – hier beginnt deiner.“_
 
 ---
 
-## 🌐 Cloudflare Tunnel einrichten
+## 🚧 Projektüberblick
 
-Lerne, wie du mit Cloudflare einen HTTPS-Tunnel für deinen lokalen Server einrichtest – **ohne Account oder eigene Domain**.
+!!! info "Was erwartet dich auf dieser Route?"
 
-Das ist besonders nützlich, wenn dein Frontend (z. B. auf Netlify gehostet) über HTTPS läuft und mit dem Backend kommunizieren soll, das lokal oder auf einem internen Server läuft.
+    Diese Dokumentation begleitet dich auf meinem Weg zu einer funktionierenden und sicheren Entwicklungsumgebung.  
+    Du lernst **Schritt für Schritt**, wie du deinen Ubuntu-Server vorbereitest, einen **Cloudflare-Tunnel** einrichtest und später auch eine CI/CD-Pipeline realisierst.
 
-👉 [Zur Anleitung »](HowToCloudflare.md)
+    Alle Stationen dieser Route sind **modular aufgebaut** – du kannst jederzeit einsteigen oder gezielt bestimmte Etappen ansteuern.
 
 ---
+
+## 🛤️ Etappen der Route
+
+!!! tip "Etappe 1 – SSH-Zugriff einrichten"
+
+    🔐 Zugriff auf deinen Server vorbereiten:
+
+    - Installation des **OpenSSH-Servers**
+    - Aktivierung des **Passwort-Logins**
+    - Verbindung über **Linux**, **Windows CMD**, **PowerShell** oder **PuTTY**
+
+    👉 [Zur SSH-Anleitung »](HowToSSH.md)  
+    👉 [Zur Server-Konfiguration »](HowToSSH(Server).md)
+
+---
+
+!!! tip "Etappe 2 – Cloudflare Tunnel starten"
+
+    🌐 Lokalen Dienst sicher erreichbar machen – ohne eigene Domain:
+
+    - Cloudflare Tunnel einrichten
+    - HTTPS-Zugang erzeugen
+    - Ausgabe in Datei speichern & URL weiterverwenden
+
+    👉 [Zur Tunnel-Anleitung »](HowToCloudflare.md)
+
+---
+
+## 🗺️ So navigierst du durch die Route
+
+!!! note "Hinweis"
+
+    - Die Etappen sind **unabhängig voneinander** nutzbar  
+    - Die Navigation erfolgt über das Menü oder die Direktlinks  
+    - Du kannst jederzeit zu einem späteren Thema springen – ganz wie bei einer echten Route
+
+---
+
+## 🚀 Dein erster Schritt
+
+Bereit? Starte mit der ersten Etappe:  
+👉 [SSH-Zugriff einrichten »](HowToSSH.md)
+
+---
+
+!!! quote "Hasan’s Route"
+
+    _„Diese Doku soll nicht nur erklären – sie soll dich begleiten.“_

@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/HowToSSH%28Server%29/">
       
       
-        <link rel="prev" href="../HowToCloudfare/">
+        <link rel="prev" href="..">
       
       
         <link rel="next" href="../HowToSSH/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>How to SSH(Server) - Hasan's Route</title>
+        <title>How to SSH(Sever) - Hasan's Route</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to SSH(Server)
+              How to SSH(Sever)
             
           </span>
         </div>
@@ -231,15 +231,20 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -263,29 +268,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../HowToCloudfare/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How to Cloudflare
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -303,7 +285,7 @@
   
   
   <span class="md-ellipsis">
-    How to SSH(Server)
+    How to SSH(Sever)
     
   </span>
   
@@ -316,7 +298,7 @@
   
   
   <span class="md-ellipsis">
-    How to SSH(Server)
+    How to SSH(Sever)
     
   </span>
   
@@ -419,7 +401,30 @@
   
   
   <span class="md-ellipsis">
-    How to SSH.md
+    How to SSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowToCloudflare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Cloudflare
     
   </span>
   
@@ -540,50 +545,43 @@
 
 
 <h1 id="ssh-zugriff-per-passwort-ohne-public-key">🔐 SSH-Zugriff per Passwort (ohne Public Key)<a class="headerlink" href="#ssh-zugriff-per-passwort-ohne-public-key" title="Permanent link">&para;</a></h1>
-<p>In diesem Abschnitt lernst du, wie du deinen Ubuntu-Server für den SSH-Zugriff vorbereitest – <strong>mit Passwort-Anmeldung</strong>, ganz ohne Public-Key-Konfiguration.</p>
-<p>Im Projekt wurde anfangs <strong>Railway</strong> für das Hosting des Backends und der MySQL-Datenbank verwendet. Da das Test-Abo jedoch nach kurzer Zeit ablief, wurde stattdessen ein Ubuntu-Server zur Verfügung gestellt.<br />
-Mit dieser Anleitung erfährst du, wie du den Server für den Fernzugriff per SSH vorbereitest.</p>
+<p>Diese Etappe auf <em>Hasan’s Route</em> führt dich zur Vorbereitung deines Ubuntu-Servers für den SSH-Zugriff – <strong>per Passwort</strong>, ganz ohne Public-Key-Konfiguration.</p>
+<p>Unsere Route startete ursprünglich mit <strong>Railway</strong>, wo Backend und Datenbank gehostet wurden. Als das Test-Abo endete, bogen wir auf einen neuen Pfad ab: ein eigener Ubuntu-Server.<br />
+In diesem Abschnitt erfährst du, wie du ihn für den sicheren Fernzugriff vorbereitest.</p>
+<p>Da unsere <strong>CI/CD-Pipeline</strong> direkten Zugriff auf den Server benötigt, ist dieser SSH-Zugriff ein zentraler Wegpunkt auf dem Deployment-Weg.</p>
 <hr />
 <h2 id="1-openssh-server-installieren">1. OpenSSH-Server installieren<a class="headerlink" href="#1-openssh-server-installieren" title="Permanent link">&para;</a></h2>
 <p>Führe auf dem <strong>Ubuntu-Server</strong> folgende Befehle aus:</p>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
 </code></pre></div>
-
 <p>Anschliessend prüfen, ob der Dienst läuft:</p>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
 </code></pre></div>
-
 <p>Wenn nicht aktiv: Dienst starten und beim Boot aktivieren:</p>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>ssh
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>ssh
 </code></pre></div>
-
 <h2 id="2-ssh-fur-passwort-login-konfigurieren">2. SSH für Passwort-Login konfigurieren<a class="headerlink" href="#2-ssh-fur-passwort-login-konfigurieren" title="Permanent link">&para;</a></h2>
 <p>Öffne die SSH-Konfigurationsdatei:</p>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/ssh/sshd_config
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/ssh/sshd_config
 </code></pre></div>
-
 <p>Suche und ändere (bzw. ergänze) folgende Zeilen:</p>
-<div class="codehilite"><pre><span></span><code>PasswordAuthentication<span class="w"> </span>yes
+<div class="highlight"><pre><span></span><code>PasswordAuthentication<span class="w"> </span>yes
 PermitRootLogin<span class="w"> </span>no
 </code></pre></div>
-
 <p>💡 <code>PermitRootLogin</code> sollte auf <code>no</code> gesetzt sein, um direkte Root-Logins zu verhindern.
 Datei speichern und schliessen.</p>
 <h2 id="3-ssh-dienst-neu-starten">3. SSH-Dienst neu starten<a class="headerlink" href="#3-ssh-dienst-neu-starten" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
 </code></pre></div>
-
 <h2 id="4-passwort-fur-benutzer-setzen">4. Passwort für Benutzer setzen<a class="headerlink" href="#4-passwort-fur-benutzer-setzen" title="Permanent link">&para;</a></h2>
 <p>Falls der Benutzer noch kein Passwort hat, kannst du eins vergeben:</p>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>dein-benutzername
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>dein-benutzername
 </code></pre></div>
-
 <h2 id="5-verbindung-herstellen">5. Verbindung herstellen<a class="headerlink" href="#5-verbindung-herstellen" title="Permanent link">&para;</a></h2>
 <p>Von einem Client aus (Linux, macOS, Windows PowerShell/CMD):</p>
-<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>wiss@&lt;server-ip&gt;
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>wiss@&lt;server-ip&gt;
 </code></pre></div>
-
 <p>Gib das gesetzte Passwort ein und du bist verbunden.</p>
 <h3 id="hinweis">⚠️ Hinweis<a class="headerlink" href="#hinweis" title="Permanent link">&para;</a></h3>
 <p>Die Anmeldung per Passwort ist einfach, aber weniger sicher als Public-Key-Authentifizierung.
@@ -636,7 +634,7 @@ Für produktive Systeme wird dringend empfohlen, stattdessen auf Public-Key-Logi
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "header.autohide", "content.action.edit", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

@@ -1,8 +1,6 @@
+# 🔐 SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
 
-# SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)
-
-Diese Anleitung zeigt, wie man von **Linux** oder **Windows** per **SSH** auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwor
-
+Bevor du dich auf deiner Route per SSH mit dem Server verbindest, lernst du hier, wie du unter **Linux** oder **Windows** OpenSSH installierst und dich **per Passwort** sicher anmeldest – ohne Public-Key-Konfiguration.
 
 ## Für Linux
 
@@ -22,12 +20,14 @@ ssh -V
 ---
 
 ### 2. Verbindung mit dem Server herstellen
+
 bsp.
+
 ```bash
 ssh wiss@31.XXX.XXX.XXX
 ```
 
-##  Für Windows
+## Für Windows
 
 ### 1. Windows
 
@@ -35,19 +35,21 @@ ssh wiss@31.XXX.XXX.XXX
 2. Verbinde dich mit dem Server:
 
 bsp.
+
 ```powershell
 ssh wiss@31.XXX.XXX.XXX
 ```
 
 ---
 
-### 2. `ssh` nicht erkannt wird
+### 2. `ssh` nicht erkannt
 
 1. Gehe zu **Einstellungen → Apps → Optionale Features**
 2. Installiere **OpenSSH Client**
 3. Danach:
 
 bsp.
+
 ```powershell
 ssh wiss@31.XXX.XXX.XXX
 ```
@@ -64,7 +66,6 @@ ssh wiss@31.XXX.XXX.XXX
 5. Melde dich an:
    - Benutzer: `wiss`
    - Passwort: `XXXX`
-
 
 ## Erfolgreiche Verbindung
 
