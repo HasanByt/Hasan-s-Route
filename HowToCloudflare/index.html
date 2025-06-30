@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/HowToCloudfare/">
+        <link rel="canonical" href="https://HasanByt.github.io/HowToCloudflare/HowToCloudflare/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../HowToSSH/">
       
-      
-        <link rel="next" href="../HowToSSH%28Server%29/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -231,15 +229,20 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -258,6 +261,52 @@
             Anleitung
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowToSSH%28Server%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to SSH(Sever)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowToSSH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to SSH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -369,52 +418,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../HowToSSH%28Server%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How to SSH(Server)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../HowToSSH/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How to SSH.md
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -509,11 +512,14 @@
 
 
 
-<h1 id="cloudflare-tunnel-setup-ohne-account">Cloudflare Tunnel Setup (ohne Account)<a class="headerlink" href="#cloudflare-tunnel-setup-ohne-account" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung beschreibt, wie ein Cloudflare-Tunnel eingerichtet und im Hintergrund betrieben wird, sodass man über eine öffentliche HTTPS-URL auf einen lokalen Dienst zugreifen kann.</p>
-<p>In unserem Projekt wurde das Frontend separat auf <strong>Netlify</strong> deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert. Hier kommt Cloudflare ins Spiel.</p>
-<p>Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen an unser Backend weiter.</p>
-<p>Da dieser Dienst und die zugehörige URL nur während der Laufzeit zur Verfügung stehen, betreiben wir den Tunnel im Hintergrund. Beim Start wird die HTTPS-URL im Terminal ausgegeben. Da wir den Dienst im Hintergrund starten und das Terminal nicht einsehen können, speichern wir die Ausgabe in eine Datei. So können wir die URL später aus der Datei auslesen.</p>
+<h1 id="cloudflare-tunnel-setup-ohne-account">🌐 Cloudflare Tunnel Setup (ohne Account)<a class="headerlink" href="#cloudflare-tunnel-setup-ohne-account" title="Permanent link">&para;</a></h1>
+<p>Auf dieser Etappe der <em>Route</em> geht es darum, deinen lokalen Dienst über das Internet sicher zugänglich zu machen – <strong>per HTTPS</strong>, ohne eigene Domain.</p>
+<p>Diese Anleitung zeigt dir, wie du mit <strong>Cloudflare Tunnel</strong> einen temporären, verschlüsselten Zugang zu deinem lokalen Backend einrichtest und den Dienst dabei im Hintergrund betreibst.</p>
+<p>In unserem Projekt wurde das Frontend separat auf <strong>Netlify</strong> deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation zwischen Frontend und Backend funktioniert.<br />
+Hier biegt unsere Route Richtung <strong>Cloudflare</strong> ab.</p>
+<p>Cloudflare erstellt für uns einen HTTPS-Tunnel: Das Frontend spricht mit Cloudflare, und Cloudflare leitet die Anfragen sicher an unser Backend weiter – ganz ohne Domain und Zertifikatsaufwand.</p>
+<p>Da dieser Tunnel nur während der Laufzeit aktiv ist, starten wir ihn im Hintergrund. Die dabei generierte HTTPS-URL wird im Terminal ausgegeben.<br />
+Weil das Terminal beim Hintergrundstart nicht sichtbar ist, speichern wir die Ausgabe automatisch in eine Datei. So können wir die Tunnel-URL später gezielt auslesen und z. B. im Frontend verwenden.</p>
 <h2 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Ein Linux-Server mit Internetzugang</li>
@@ -522,16 +528,14 @@
 </ul>
 <hr />
 <h2 id="1-cloudflare-installieren">1. Cloudflare installieren<a class="headerlink" href="#1-cloudflare-installieren" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>wget<span class="w"> </span>https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
 sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cloudflared-linux-amd64.deb
 </code></pre></div>
-
 <hr />
 <h2 id="2-tunnel-im-hintergrund-starten">2. Tunnel im Hintergrund starten<a class="headerlink" href="#2-tunnel-im-hintergrund-starten" title="Permanent link">&para;</a></h2>
 <p>Führe folgenden Befehl aus, um den Tunnel im Hintergrund zu starten:</p>
-<div class="codehilite"><pre><span></span><code>nohup<span class="w"> </span>cloudflared<span class="w"> </span>tunnel<span class="w"> </span>--url<span class="w"> </span>http://localhost:8080<span class="w"> </span>&gt;<span class="w"> </span>tunnel.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>nohup<span class="w"> </span>cloudflared<span class="w"> </span>tunnel<span class="w"> </span>--url<span class="w"> </span>http://localhost:8080<span class="w"> </span>&gt;<span class="w"> </span>tunnel.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-
 <p>Erklärung:</p>
 <ul>
 <li>nohup sorgt dafür, dass der Tunnel im Hintergrund weiterläuft – auch nach einer SSH-Trennung.</li>
@@ -540,13 +544,11 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
 <hr />
 <h2 id="3-tunnel-url-auslesen">3. Tunnel-URL auslesen<a class="headerlink" href="#3-tunnel-url-auslesen" title="Permanent link">&para;</a></h2>
 <p>Um die erzeugte HTTPS-Adresse zu finden, verwende:</p>
-<div class="codehilite"><pre><span></span><code>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;grep -oP &#39;</span>https://.*<span class="se">\.</span>trycloudflare<span class="se">\.</span>com<span class="err">&#39;</span><span class="w"> </span>tunnel.log
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s1">&#39;grep -oP &#39;</span>https://.*<span class="se">\.</span>trycloudflare<span class="se">\.</span>com<span class="err">&#39;</span><span class="w"> </span>tunnel.log
 </code></pre></div>
-
 <p>Beispielausgabe:</p>
-<div class="codehilite"><pre><span></span><code>https://raise-operational-will-gentle.trycloudflare.com
+<div class="highlight"><pre><span></span><code>https://raise-operational-will-gentle.trycloudflare.com
 </code></pre></div>
-
 <p>Diese URL kann z. B. im Frontend eingetragen werden, um das Backend erreichbar zu machen.</p>
 <hr />
 <h2 id="hinweis">⚠️ Hinweis<a class="headerlink" href="#hinweis" title="Permanent link">&para;</a></h2>
@@ -601,7 +603,7 @@ sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </spa
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "header.autohide", "content.action.edit", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

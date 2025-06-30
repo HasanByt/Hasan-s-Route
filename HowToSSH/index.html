@@ -14,13 +14,15 @@
         <link rel="prev" href="../HowToSSH%28Server%29/">
       
       
+        <link rel="next" href="../HowToCloudflare/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>How to SSH.md - Hasan's Route</title>
+        <title>How to SSH - Hasan's Route</title>
       
     
     
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to SSH.md
+              How to SSH
             
           </span>
         </div>
@@ -229,15 +231,20 @@
     
     
     
+      
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -264,35 +271,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../HowToCloudfare/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How to Cloudflare
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../HowToSSH%28Server%29/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How to SSH(Server)
+    How to SSH(Sever)
     
   </span>
   
@@ -324,7 +308,7 @@
   
   
   <span class="md-ellipsis">
-    How to SSH.md
+    How to SSH
     
   </span>
   
@@ -337,7 +321,7 @@
   
   
   <span class="md-ellipsis">
-    How to SSH.md
+    How to SSH
     
   </span>
   
@@ -412,9 +396,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-ssh-nicht-erkannt-wird" class="md-nav__link">
+  <a href="#2-ssh-nicht-erkannt" class="md-nav__link">
     <span class="md-ellipsis">
-      2. ssh nicht erkannt wird
+      2. ssh nicht erkannt
     </span>
   </a>
   
@@ -447,6 +431,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowToCloudflare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Cloudflare
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -538,9 +545,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-ssh-nicht-erkannt-wird" class="md-nav__link">
+  <a href="#2-ssh-nicht-erkannt" class="md-nav__link">
     <span class="md-ellipsis">
-      2. ssh nicht erkannt wird
+      2. ssh nicht erkannt
     </span>
   </a>
   
@@ -585,24 +592,21 @@
 
 
 
-<h1 id="ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer">SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)<a class="headerlink" href="#ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung zeigt, wie man von <strong>Linux</strong> oder <strong>Windows</strong> per <strong>SSH</strong> auf einen Server zugreift – inklusive OpenSSH-Installation und Anmeldung mit Passwor</p>
+<h1 id="ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer">🔐 SSH-Zugriff auf den Ubuntu-Server (für neue Benutzer)<a class="headerlink" href="#ssh-zugriff-auf-den-ubuntu-server-fur-neue-benutzer" title="Permanent link">&para;</a></h1>
+<p>Bevor du dich auf deiner Route per SSH mit dem Server verbindest, lernst du hier, wie du unter <strong>Linux</strong> oder <strong>Windows</strong> OpenSSH installierst und dich <strong>per Passwort</strong> sicher anmeldest – ohne Public-Key-Konfiguration.</p>
 <h2 id="fur-linux">Für Linux<a class="headerlink" href="#fur-linux" title="Permanent link">&para;</a></h2>
 <h3 id="1-openssh-client-installieren">1. OpenSSH Client installieren<a class="headerlink" href="#1-openssh-client-installieren" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-client<span class="w"> </span>-y
 </code></pre></div>
-
 <p>Prüfen, ob SSH installiert ist:</p>
-<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>-V
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-V
 </code></pre></div>
-
 <hr />
 <h3 id="2-verbindung-mit-dem-server-herstellen">2. Verbindung mit dem Server herstellen<a class="headerlink" href="#2-verbindung-mit-dem-server-herstellen" title="Permanent link">&para;</a></h3>
 <p>bsp.</p>
-<div class="codehilite"><pre><span></span><code>ssh<span class="w"> </span>wiss@31.XXX.XXX.XXX
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>wiss@31.XXX.XXX.XXX
 </code></pre></div>
-
 <h2 id="fur-windows">Für Windows<a class="headerlink" href="#fur-windows" title="Permanent link">&para;</a></h2>
 <h3 id="1-windows">1. Windows<a class="headerlink" href="#1-windows" title="Permanent link">&para;</a></h3>
 <ol>
@@ -610,20 +614,18 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li>Verbinde dich mit dem Server:</li>
 </ol>
 <p>bsp.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
 </code></pre></div>
-
 <hr />
-<h3 id="2-ssh-nicht-erkannt-wird">2. <code>ssh</code> nicht erkannt wird<a class="headerlink" href="#2-ssh-nicht-erkannt-wird" title="Permanent link">&para;</a></h3>
+<h3 id="2-ssh-nicht-erkannt">2. <code>ssh</code> nicht erkannt<a class="headerlink" href="#2-ssh-nicht-erkannt" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Gehe zu <strong>Einstellungen → Apps → Optionale Features</strong></li>
 <li>Installiere <strong>OpenSSH Client</strong></li>
 <li>Danach:</li>
 </ol>
 <p>bsp.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="n">wiss</span><span class="nv">@31</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span><span class="p">.</span><span class="n">XXX</span>
 </code></pre></div>
-
 <h3 id="3-mit-putty">3. Mit PuTTY<a class="headerlink" href="#3-mit-putty" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Lade PuTTY herunter: https://www.putty.org/</li>
@@ -639,9 +641,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </ol>
 <h2 id="erfolgreiche-verbindung">Erfolgreiche Verbindung<a class="headerlink" href="#erfolgreiche-verbindung" title="Permanent link">&para;</a></h2>
 <p>Wenn alles geklappt hat, erscheint:</p>
-<div class="codehilite"><pre><span></span><code>Welcome to Ubuntu ...
+<div class="highlight"><pre><span></span><code>Welcome to Ubuntu ...
 </code></pre></div>
-
 <p>Du bist nun per SSH mit dem Server verbunden.</p>
 
 
@@ -691,7 +692,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "header.autohide", "content.action.edit", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
