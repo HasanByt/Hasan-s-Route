@@ -25,6 +25,6 @@ Lerne, wie du mit Cloudflare einen HTTPS-Tunnel für deinen lokalen Server einri
 
 Das ist besonders nützlich, wenn dein Frontend (z. B. auf Netlify gehostet) über HTTPS läuft und mit dem Backend kommunizieren soll, das lokal oder auf einem internen Server läuft.
 
-👉 [Zur Anleitung »](cloudflare-tunnel.md)
+👉 [Zur Anleitung »](HowToCloudflare.md)
 
 ---
