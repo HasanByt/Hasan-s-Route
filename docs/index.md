@@ -27,6 +27,12 @@ Da wir bereits mit **React** gearbeitet hatten, entwickelten wir ein passendes *
 
 Das Projekt wurde zunächst über **Railway (Backend & DB)** und **Netlify (Frontend)** deployed. Zusätzlich nutzten wir **CI/CD-Pipelines mit GitLab**.
 
+[👉 Hier gehts zur algooo Webapp](https://algooo.netlify.app/)
+
+<p align="center">
+  <img src="algooo.png" alt="Webapp Vorschau" width="50%">
+</p>
+
 🛑 Nach kurzer Zeit lief jedoch das kostenlose Railway-Abo ab.  
 ✅ Unsere Lösung: Deployment von **Backend & Datenbank auf einem eigenen Ubuntu-Server** – erfolgreich umgesetzt!
 
@@ -76,13 +82,12 @@ Mit **Hasan's Route** möchte ich zeigen, wie ich den Weg vom lokalen Setup bis 
 
     Dann zeige ich dir, wie du mit **MkDocs** und dem modernen **Material for MkDocs**-Theme deine eigene Dokumentation entwickelst – lokal im Browser und deployt über **GitHub Pages**.
 
-    - MkDocs & Material installieren  
-    - Projektstruktur aufbauen  
-    - Navigation und Styling konfigurieren  
-    - Veröffentlichung mit `mkdocs gh-deploy`  
+    - MkDocs & Material installieren
+    - Projektstruktur aufbauen
+    - Navigation und Styling konfigurieren
+    - Veröffentlichung mit `mkdocs gh-deploy`
 
     👉 [Zur MkDocs-Anleitung »](HowToMkdocs.md)
-
 
 ## So navigierst du durch die Route
 
