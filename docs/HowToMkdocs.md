@@ -27,7 +27,7 @@
 Im Rahmen des Moduls **324** führen wir zwei bestehende Algorithmen-Projekte zusammen.
 Da das **Frontend** über **Netlify** und das **Backend** über einen **Ubuntu-Server** betrieben wird, war eine zentrale, leicht zugängliche Dokumentation notwendig.
 
-    Damit sich alle Beteiligten entlang der gleichen *Route* bewegen können, wurde diese Dokumentation erstellt und via **GitHub Pages** veröffentlicht.
+Damit sich alle Beteiligten entlang der gleichen *Route* bewegen können, wurde diese Dokumentation erstellt und via **GitHub Pages** veröffentlicht.
 
 ---
 
