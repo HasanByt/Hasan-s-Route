@@ -6,10 +6,6 @@
 
     MkDocs ist ein statischer Website-Generator, der speziell für technische Dokumentationen gedacht ist. Du schreibst in Markdown und erhältst eine elegante Webseite – ideal für Teams, Projekte oder Lernpfade wie diesen.
 
-    Im Rahmen des Moduls **324** führen wir zwei bestehende Algorithmen-Projekte zusammen.
-    Da das **Frontend** über **Netlify** und das **Backend** über einen **Ubuntu-Server** betrieben wird, war eine zentrale, leicht zugängliche Dokumentation notwendig.
-
-    Damit sich alle Beteiligten entlang der gleichen *Route* bewegen, wurde diese Dokumentation erstellt und via **GitHub Pages** veröffentlicht.
 
 
     Die wichtigsten Merkmale von MkDocs:
@@ -23,6 +19,15 @@
     🚀 **Live-Vorschau**: Mit `mkdocs serve` startest du einen lokalen Entwicklungsserver, der Änderungen automatisch anzeigt.
 
     🛠️ **Deployment**: Ideal zur Veröffentlichung auf **GitHub Pages** mit dem Befehl `mkdocs gh-deploy`.
+
+---
+
+## Hintergrund
+
+Im Rahmen des Moduls **324** führen wir zwei bestehende Algorithmen-Projekte zusammen.
+Da das **Frontend** über **Netlify** und das **Backend** über einen **Ubuntu-Server** betrieben wird, war eine zentrale, leicht zugängliche Dokumentation notwendig.
+
+    Damit sich alle Beteiligten entlang der gleichen *Route* bewegen können, wurde diese Dokumentation erstellt und via **GitHub Pages** veröffentlicht.
 
 ---
 
