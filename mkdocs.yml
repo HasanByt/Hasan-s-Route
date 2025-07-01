@@ -15,6 +15,9 @@ theme:
     - content.action.edit
     - content.code.copy
 
+extra:
+  generator: false
+
 nav:
   - Startseite: index.md
   - Anleitung:
