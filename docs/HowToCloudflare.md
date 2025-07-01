@@ -1,4 +1,4 @@
-# 🌐 Etappe 2 – Cloudflare Tunnel Setup (ohne Account)
+# 🌐 Etappe 3 – Cloudflare Tunnel Setup (ohne Account)
 
 !!! info "Etappenziel"
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🚧 Hintergrund
+## Hintergrund
 
 In unserem Projekt wurde das Frontend separat auf **Netlify** deployed. Da Netlify standardmässig HTTPS verwendet, muss auch das Backend über HTTPS erreichbar sein, damit die Kommunikation funktioniert.  
 Hier biegt unsere Route Richtung **Cloudflare Tunnel** ab.
@@ -16,7 +16,7 @@ Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen sic
 
 ---
 
-## ✅ Voraussetzungen
+## Voraussetzungen
 
 !!! tip "Was du brauchst"
 
@@ -26,7 +26,7 @@ Das Frontend kommuniziert mit Cloudflare, und Cloudflare leitet die Anfragen sic
 
 ---
 
-## 🛠️ 1. Cloudflare Tunnel installieren
+## 1. Cloudflare Tunnel installieren
 
 ```bash
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
@@ -35,7 +35,7 @@ sudo dpkg -i cloudflared-linux-amd64.deb
 
 ---
 
-## 🚀 2. Tunnel im Hintergrund starten
+## 2. Tunnel im Hintergrund starten
 
 Starte den Tunnel im Hintergrund, damit er auch nach SSH-Trennung weiterläuft:
 
@@ -49,7 +49,7 @@ nohup cloudflared tunnel --url http://localhost:8080 > tunnel.log 2>&1 &
 - Die Ausgabe (inkl. HTTPS-URL) wird in die Datei tunnel.log geschrieben.
 ---
 
-## 🔎 3. HTTPS-Tunnel-URL auslesen
+## 3. HTTPS-Tunnel-URL auslesen
 
 Verwende diesen Befehl, um die generierte URL herauszufiltern:
 
@@ -67,7 +67,7 @@ https://raise-operational-will-gentle.trycloudflare.com
 
 ---
 
-## ⚠️ Hinweis zur Etappe
+## Hinweis zur Etappe
 
 !!! warning "Nur temporär!"
 
@@ -76,5 +76,5 @@ Er ist nicht garantiert verfügbar, nicht wiederverwendbar und nicht für Produk
 
 Für einen stabilen, benannten Tunnel solltest du ein Cloudflare-Konto nutzen.
 
-## 📚 Weitere Infos 
+## Weitere Infos 
 👉 [Cloudflare Tunnel Quickstart](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)

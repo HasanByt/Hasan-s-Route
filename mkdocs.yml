@@ -18,9 +18,10 @@ theme:
 nav:
   - Startseite: index.md
   - Anleitung:
-      - How to SSH(Sever): HowToSSH(Server).md
-      - How to SSH: HowToSSH.md
-      - How to Cloudflare: HowToCloudflare.md
+      - 1. How to SSH(Sever): HowToSSH(Server).md
+      - 2. How to SSH: HowToSSH.md
+      - 3. How to Cloudflare: HowToCloudflare.md
+      - 4. How to Mkdocs: HowToMkdocs.md
 
 markdown_extensions:
   - admonition

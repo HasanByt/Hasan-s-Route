@@ -1,5 +1,5 @@
 
-# 🔐 Etappe 1a – SSH-Zugriff per Passwort (ohne Public Key)
+# 🔐 Etappe 1 – SSH-Zugriff per Passwort (ohne Public Key)
 
 !!! info "Etappenziel"
 
@@ -7,7 +7,7 @@
 
 ---
 
-## 🚧 Hintergrund
+## Hintergrund
 
 Unsere Route startete ursprünglich mit **Railway**, wo Backend und Datenbank gehostet wurden.  
 Als das Test-Abo endete, bogen wir auf einen neuen Pfad ab: ein eigener Ubuntu-Server.  
@@ -16,7 +16,7 @@ Da unsere **CI/CD-Pipeline** direkten Zugriff auf den Server benötigt, ist der 
 
 ---
 
-## 🛠️ 1. OpenSSH-Server installieren
+## 1. OpenSSH-Server installieren
 
 Führe auf dem Ubuntu-Server folgende Befehle aus:
 
@@ -39,7 +39,7 @@ sudo systemctl enable --now ssh
 
 ---
 
-## ⚙️ 2. Passwort-Login aktivieren
+## 2. Passwort-Login aktivieren
 
 Bearbeite die Konfigurationsdatei:
 
@@ -62,7 +62,7 @@ Speichere und schliesse die Datei (`CTRL + O`, `Enter`, dann `CTRL + X`).
 
 ---
 
-## 🔄 3. SSH-Dienst neu starten
+## 3. SSH-Dienst neu starten
 
 ```bash
 sudo systemctl restart ssh
@@ -70,7 +70,7 @@ sudo systemctl restart ssh
 
 ---
 
-## 🔑 4. Passwort für Benutzer setzen
+## 4. Passwort für Benutzer setzen
 
 Falls der Benutzer noch kein Passwort hat:
 
@@ -86,7 +86,7 @@ sudo passwd wiss
 
 ---
 
-## 🧪 5. Verbindung testen
+## 5. Verbindung testen
 
 Von einem Client aus (Linux, macOS oder Windows PowerShell/CMD):
 
@@ -95,6 +95,67 @@ ssh wiss@<server-ip>
 ```
 
 Gib das gesetzte Passwort ein – und du bist verbunden ✅
+
+---
+
+## 6. Verbindungsdaten für externen Zugriff ermitteln
+
+Um dich **von ausserhalb deines Netzwerks** (z. B. von Zuhause auf den Schulserver) per SSH zu verbinden, brauchst du:
+
+- die **öffentliche IP-Adresse** deines Servers
+- den **Benutzernamen**, unter dem du dich einloggst
+- ggf. eine **Portfreigabe** im Router oder der Firewall
+
+## Öffentliche IP-Adresse herausfinden
+
+Auf dem Server:
+
+```bash
+curl ifconfig.me
+```
+
+Beispielausgabe:
+
+```
+31.123.45.67
+```
+
+Diese IP-Adresse verwendest du auf dem Client (Laptop, Heim-PC) für den SSH-Zugriff.
+
+### Benutzername anzeigen
+
+```bash
+whoami
+```
+
+Damit erhältst du den Benutzernamen (z. B. `wiss`), den du beim Verbindungsaufbau benötigst.
+
+---
+
+## Zusätzliche Voraussetzungen für externen Zugriff
+
+Damit der Zugriff von aussen funktioniert, beachte Folgendes:
+
+- Der Server muss **über das Internet erreichbar** sein (z. B. durch eine öffentliche IP oder Portweiterleitung)
+- Port **22 (SSH)** muss in der **Firewall** freigegeben sein
+- Falls der Server hinter einem Router steht: **Portweiterleitung** einrichten (`TCP 22` → Server-IP im LAN)
+
+!!! warning "Achtung bei Schulnetzwerken"
+
+    In Schul- oder Firmennetzwerken kann der Zugriff durch Firewalls oder NAT blockiert sein.  
+    In solchen Fällen kann ein externer SSH-Zugang über einen Tunnel (z. B. Cloudflare Tunnel) nötig sein.
+
+---
+
+## Verbindung von aussen
+
+Auf dem Client:
+
+```bash
+ssh wiss@31.123.45.67
+```
+
+Mit dem vorher gesetzten Passwort einloggen – und los geht’s!
 
 ---
 
@@ -110,3 +171,4 @@ Gib das gesetzte Passwort ein – und du bist verbunden ✅
 !!! tip "Zur nächsten Etappe"
 
     👉 [SSH-Zugriff zum Ununtu-Server »](HowToSSH.md)
+

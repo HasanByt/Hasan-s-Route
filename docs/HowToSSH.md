@@ -1,4 +1,4 @@
-# 🔐 Etappe 1b – SSH-Zugriff zum Ubuntu-Server
+# 🔐 Etappe 2 – SSH-Zugriff zum Ubuntu-Server
 
 !!! info "Etappenziel"
 
@@ -6,7 +6,19 @@
 
 ---
 
-## 🐧 Für Linux
+## Hintergrund
+
+Diese Etappe deiner _Route_ führt dich zu einem entscheidenden Ausgangspunkt: dem **Zugang zu deinem Server**.
+
+Bevor du ein neues Projekt startest oder ein laufendes System anpasst, brauchst du Zugriff auf den Server.  
+Der SSH-Zugriff ist dabei der erste technische Schritt – sozusagen das Eingangstor auf deinem Deployment-Weg.
+
+Du lernst, wie du dich per **Passwort-Anmeldung** sicher mit einem Ubuntu-Server verbindest, den wir zuvor entsprechend vorbereitet haben – ganz ohne SSH-Keys.  
+Besonders praktisch, wenn du **schnell loslegen**, **etwas überprüfen** oder **manuell eingreifen** möchtest.
+
+Egal ob du mit **Linux**, **Windows PowerShell**, **CMD** oder **PuTTY** arbeitest – hier erfährst du, wie du dich unkompliziert und **passwortbasiert** verbindest.
+
+## Für Linux
 
 !!! tip "1. OpenSSH Client installieren"
 
@@ -35,38 +47,38 @@
 
 ---
 
-## 🪟 Für Windows
+## Für Windows
 
-### 🔹 Option 1: PowerShell / CMD (OpenSSH vorinstalliert)
+### Option 1: PowerShell / CMD (OpenSSH vorinstalliert)
 
-1. Öffne **PowerShell** oder **CMD**  
+1. Öffne **PowerShell** oder **CMD**
 2. Verbinde dich mit dem Server:
 
-    ```powershell
-    ssh wiss@31.XXX.XXX.XXX
-    ```
+   ```powershell
+   ssh wiss@31.XXX.XXX.XXX
+   ```
 
 ---
 
-### 🔹 Option 2: `ssh` wird nicht erkannt
+### Option 2: `ssh` wird nicht erkannt
 
 !!! note "OpenSSH Client aktivieren"
 
-1. Öffne: **Einstellungen → Apps → Optionale Features**  
-2. Suche nach **OpenSSH Client**  
-3. Installiere ihn, falls nicht vorhanden  
+1. Öffne: **Einstellungen → Apps → Optionale Features**
+2. Suche nach **OpenSSH Client**
+3. Installiere ihn, falls nicht vorhanden
 4. Danach wie gewohnt verbinden:
 
-    ```powershell
-    ssh wiss@31.XXX.XXX.XXX
-    ```
+   ```powershell
+   ssh wiss@31.XXX.XXX.XXX
+   ```
 
 ---
 
-### 🔹 Option 3: Mit PuTTY (grafisch)
+### Option 3: Mit PuTTY (grafisch)
 
-1. Lade PuTTY herunter: [https://www.putty.org/](https://www.putty.org/)  
-2. Öffne PuTTY  
+1. Lade PuTTY herunter: [https://www.putty.org/](https://www.putty.org/)
+2. Öffne PuTTY
 3. Trage ein:
    - **Host Name**: `31.XXX.XXX.XXX`
    - **Port**: `22`
@@ -78,7 +90,7 @@
 
 ---
 
-## ✅ Erfolgreiche Verbindung
+## Erfolgreiche Verbindung
 
 Wenn alles geklappt hat, siehst du etwas wie:
 
